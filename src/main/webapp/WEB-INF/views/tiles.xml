@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+ "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+ "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<!-- home -->
+	<definition name="user_home"
+		template="/WEB-INF/views/users/index.jsp">
+		<put-attribute name="loading"
+			value="/WEB-INF/views/users/loading/loading.jsp" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/users/header/_header.jsp" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/users/banner/_menu.jsp" />
+		<put-attribute name="filter"
+			value="/WEB-INF/views/users/filter/_filter.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="banner_bot"
+			value="/WEB-INF/views/users/banner/banner-bot.jsp" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/users/footer/_footer.jsp" />
+		<put-attribute name="script"
+			value="/WEB-INF/views/users/script_footer/js.jsp" />
+	</definition>
+	<definition name="/*" extends="user_home">
+		<put-attribute name="body"
+			value="/WEB-INF/views/users/{1}.jsp" />
+	</definition>
+	<!-- nap -->
+	<definition name="user_nap"
+		template="/WEB-INF/views/users/user.jsp">
+		<put-attribute name="loading"
+			value="/WEB-INF/views/users/loading/loading.jsp" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/users/header/_header.jsp" />
+
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/users/footer/_footer.jsp" />
+		<put-attribute name="script"
+			value="/WEB-INF/views/users/script_footer/js.jsp" />
+	</definition>
+	<definition name="*/*" extends="user_nap">
+		<put-attribute name="body"
+			value="/WEB-INF/views/users/{1}/{2}.jsp" />
+	</definition>
+
+	<!-- admin -->
+	<definition name="admin_nap"
+		template="/WEB-INF/views/admins/admin_father/admin.jsp">
+		<put-attribute name="loading"
+			value="/WEB-INF/views/admins/admin_father/sub-page/loading.jsp" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/admins/admin_father/sub-page/_menu.jsp" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/admins/admin_father/sub-page/header/header_bot.jsp" />
+
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/admins/admin_father/sub-page/bg.jsp" />
+		<put-attribute name="script"
+			value="/WEB-INF/views/admins/admin_father/sub-page/script_js/js.jsp" />
+	</definition>
+	<definition name="*/*/*" extends="admin_nap">
+		<put-attribute name="body"
+			value="/WEB-INF/views/admins/{1}/{2}/{3}.jsp" />
+	</definition>
+	
+	<definition name="*/*/*" extends="admin_nap">
+		<put-attribute name="body"
+			value="/WEB-INF/views/admins/{1}/{2}/{3}.jsp" />
+	</definition>
+</tiles-definitions>

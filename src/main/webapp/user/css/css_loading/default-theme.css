@@ -1,0 +1,10 @@
+
+#wpf-loader-two .wpf-loader-two-inner:before {
+  background: #2fdab8;  
+}
+#wpf-loader-two .wpf-loader-two-inner:after {
+  background: #2fdab8;  
+}
+#wpf-loader-two {
+  background-color: #2fdab8;  
+}
